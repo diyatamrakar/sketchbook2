@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Micro Project Assesment </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Micro-Project — Assesment</h1>
+    <section class="report-section">
+        <h2>Core Rule & System Clarity <span class="score">(20/20)</span></h2>
+        <p>The system is organized by a singular rule: <em>"A stone's kinetic skip-potential is determined by the vector of a user's drag-input until friction or boundary collisions force a state change."</em> The slingshot mechanic consistently reflects this rule.</p>
+
+    <h2>State Progression <span class="score">(15/15)</span></h2>
+    <p><strong>Justification:</strong> The system moves through four structural states: 
+        <ul>
+            <strong>1. Potential</strong> (Stones on sand), 
+            <strong>2. Dragging</strong> (Slingshot UI active),
+            <strong>3. Kinetic</strong> (Physics/Skipping loop),
+            <strong>4. Empty</strong> (UI prompt to reset).
+        </ul> 
+        The behavior shifts from manual input to automated physics to resource restriction.</p>
+
+    <h2>Interaction & Evolution <span class="score">(15/15)</span></h2>
+    <p><strong>Justification:</strong> Interaction has meaningful consequences: 
+        pull distance scales skips from 1 to 8. The system <strong>degrades</strong> 
+        as the stone supply is exhausted and <strong>accumulates</strong> visual history 
+        through the persistent ripple array.</p>
+
+    <h2>Iterative Development & Critique <span class="score">(15/15)</span></h2>
+    <p><strong>Justification:</strong> Based on peer feedback, I added a "Ghost Stone" 
+        at the origin point because users were confused about where to start the drag. 
+        I also refactored the physics to include a "sink" condition if the stone hits the 
+        pond's edge, because of the feedback i found out there was a bug solving a bug which 
+        randomly gave extra stone to skip</p>
+
+    <h2>Documentation & Logging <span class="score">(15/15)</span></h2>
+    <p><strong>Justification:</strong> My code documents the implementation of the elliptical 
+        boundary formula "(x^2/a^2 + y^2/b^2 = 1)" to constrain the stones. I logged the 
+        transition from a simple "click-to-ripple" to a full skipping physics system.</p>
+
+    <h2>Risk & Experimentation <span class="score">(8/10)</span></h2>
+    <p><strong>Justification:</strong> I pushed beyond basic reactive sketches by implementing 
+        <strong>State-Based Feedback</strong>. I mapped drag distance to a discrete `bounceLimit` 
+        array and used `drawingContext.clip()` to manage complex visual masking, ensuring ripples 
+        never bleed onto the "land" pixels. But I think the stone is a bit shaky because of the masks.</p>
+
+        <h2>Participation & Critique Engagement <span class="score">(10/10)</span></h2>
+        <p><strong>Justification:</strong> Critique from my peers and instructor fundamentally shifted 
+            the system's structural priorities. Based on these critiques, I implemented three major changes 
+            to improve system clarity and stability:</p>
+        <ul>
+            <li><strong>Visual Feedback (The "Ghost Stone"):</strong> A peer mentioned they were confused 
+            and tried to drag stones directly from the land. To fix this, I added a "Ghost Stone" at the point 
+            of origin during the drag phase to clarify that the interaction is a slingshot mechanic starting from 
+            the pond.</li>
+            <li><strong>Dynamic State Change:</strong> I implemented a visual feedback system on the slingshot vector.
+            This allows the user to see the "charge" of the throw, communicating how many bounces (skips) the stone 
+            will achieve before the interaction is even released.</li>
+            <li><strong>Structural Bug Fix:</strong> Peers identified a "teleportation" bug where a stone would 
+            reset prematurely if a new one was clicked too rapidly. I refactored the physics loop from a 
+            single-variable system into a <strong>Multi-Stone Array</strong>, allowing independent stone 
+            objects to exist and calculate physics without overwriting each other's data.</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

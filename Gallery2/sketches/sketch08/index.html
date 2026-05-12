@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sketch #8 </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+    <script src="js/fruit.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Sketch #8: Multi-State Fruit Gallery</h1>
+    <div class="reflection">
+        <p><strong>What determines movement?</strong> Movement is triggered by the <code>keyPressed()</code> function, specifically listening for the Left and Right arrow keys to change the <code>currentIndex</code>.</p>
+        <p><strong>How are boundaries handled?</strong> I used wrap logic to allow infinite navigation; if the user goes past the fifth fruit, the system resets the index to 0.</p>
+        <p><strong>Reflection:</strong> This sketch models a <strong>chromatic progression</strong>. By navigating through the fruits, the user experiences a shift in the color spectrum from cool blues to warm oranges and deep reds. I learned how to manage
+            an array of external media and ensure they scale responsively to the window size.</p>
+    </div>
+
+    <div class="direction">
+        <p><strong>Press Left or Right arrow to flip through the pictures</strong></p>
+    </div>
+</body>
+
+</html>

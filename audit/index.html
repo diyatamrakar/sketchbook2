@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Interface Audit — Landing Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Interface Audit — Landing Page</h1>
+    <section class="report-section">
+        <h2>Visibility of System Status</h2>
+        <p>The landing page functions as a central hub for the sketchbook. While the header clearly identifies the site, the <span class="highlight">individual system states remain opaque</span>. A primary issue is the lack of visual indicators for "visited" links. When a user explores a sketch and returns, the button appears unchanged. This forces the user to mentally track their progress through 14 different interactive points, violating the principle of "Recognition rather than Recall." Without a color shift or progress marker, the system fails to communicate which tasks have been completed.</p>
+
+        <h2>Affordances & Signifiers</h2>
+        <p>Labeling buttons "Sketch 1" through "Sketch 9" creates a "blind-click" scenario where the user cannot predict the interaction style or theme before clicking. Furthermore, the grouping under "Micro Project" uses the same visual styling for analytical documents (Reflection/Audit) and the interactive project (FINAL), failing to signify the difference between a reading task and a play task.</p>
+
+        <h2>Navigation & Mapping</h2>
+        <p>The system currently employs a rigid <span class="highlight">Hub-and-Spoke mapping model</span>. This creates a high interaction cost; if a user is in Sketch 1 and wishes to view Sketch 2, they must click the browser's back button to return to the hub first. There is no lateral mapping to allow users to move sequentially through the work. This "back-arrow dependency" creates a disjointed experience where the landing page acts as a mandatory roadblock rather than a fluid directory.</p>
+
+        <h2>Constraints & Assumptions</h2>
+        <p>The interface assumes a high level of user patience and a linear browsing intent that isn't structurally enforced. It <span class="highlight">hides technical constraints.</span> The design assumes that the user will intuitively understand that "Ideas" and "Step One" should precede "FINAL," yet provides no visual arrows or sequence lines to guide that behavior.</p>
+
+        <h2>Heuristic Violations</h2>
+        <ul>
+            <li><strong>Recognition rather than Recall:</strong> Numbered buttons force users to memorize content locations. <em>Fix: Add hover-previews or descriptive tags.</em></li>
+            <li><strong>User Control and Freedom:</strong> Users lack an "Emergency Exit" within sketches to return home quickly or move to the next item. <em>Fix: Implement a site-wide Navbar.</em></li>
+        </ul>
+
+        <h2>Structural Revision Proposal</h2>
+        <ul>
+            <li><strong>Global Navigation Bar:</strong> Implement a persistent navbar across all pages (Hub, Sketches, and Projects). This allows for "Lateral Navigation," enabling users to jump between any two pages without returning to the home screen.</li>
+            <li><strong>Stateful Buttons:</strong> Integrate CSS :visited logic or JS-based toggle states to change the button color once a user has viewed a specific sketch, providing immediate feedback on completed tasks.</li>
+            <li><strong>Visual Pathing:</strong> Link the Micro Project steps with a literal line or "Step 1, 2, 3" markers to visually guide the user through the project's evolution chronologically.</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sketch #6 </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+    <script src="js/coffee.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Sketch #6: Coffee Run </h1>
+    <div class="reflection">
+        <h2>If coffee machine working at home then drink coffee at home otherwise go out for a coffee run </h2>
+        <p><strong>What rule did you design?</strong> The rule is that the character can only move toward the coffee shop if the "machine status" is broken, which is triggered by holding down the mouse.</p>
+        <p><strong>What is the “otherwise”?</strong> Otherwise, when the mouse is released, the machine is considered 'working' and the character is instantly snapped back to the Home zone (x = 50).</p>
+        <p><strong>How does the user know the state changed?</strong> The state change is communicated through on-screen status text that changes color, and the physical constraint of the circle being 'locked' or 'unlocked' for movement.</p>
+    </div>
+    <div id="canvas"></div>
+</body>
+
+</html>

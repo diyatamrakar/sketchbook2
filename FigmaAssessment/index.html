@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Figma Assessment </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head> 
+<body>
+        <h1>Figma Assessment</h1>
+
+        <section class="report-section">
+            <h3>Navigation Model & System Coherence <span class="score">(20/20)</span></h3>
+            <p>The navigation logic remains consistent across page types, utilizing viewport-specific adaptations to manage the "Gulf of Execution."</p>
+                <strong>Evidence:</strong> Transitioning from a central hub model on mobile, I implemented a <strong>dropdown menu</strong> for desktop expansion to maintain horizontal header space. For mobile, I utilized a <strong>full-screen overlay</strong>, ensuring navigation remains accessible without cluttering the primary content hierarchy.
+        
+
+            <h3>Hierarchy & Mobile-First Logic <span class="score">(14/20)</span></h3>
+            <p>While mobile-first structural logic was applied, the visual hierarchy and aesthetic execution currently require significant refinement. As there is no clue whether you clicked or not.</p>
+        
+                <strong>Evidence:</strong> The desktop layout justifies expansion by utilizing additional width for complex documentation (as seen in frames 18-21). However, the mobile layout suffers from a lack of vertical rhythm and prioritized "State Visibility," making the reading experience less intuitive than the desktop equivalent.
+            
+            <h3>State Visibility & Interaction Cues <span class="score">(15/15)</span></h3>
+            <p>Interaction cues are predictable across sizes, providing clear feedback loops through component states.</p>
+                <strong>Evidence:</strong> I refactored the navigation to include <strong>Hover States</strong> on desktop to provide immediate feedback. Active states within the mobile overlay and desktop dropdowns ensure the user always understands their location within the system.
+    
+            <h3>Theoretical Integration <span class="score">(15/15)</span></h3>
+        
+                <ul>
+                    <li><strong>Norman:</strong> Pill-shaped buttons and the mobile overlay act as <strong>signifiers</strong> that reduce the Gulf of Execution.</li>
+                    <li><strong>Nielsen:</strong> Maintained <strong>Consistency and Standards</strong> by applying a global header and dropdown system across 20+ frames.</li>
+                    <li><strong>Shneiderman:</strong> Achieved <strong>Closure</strong> by organizing the Micro-Project into logical, sequential steps.</li>
+                </ul>
+    
+
+            <h3>Risk & Structural Ambition <span class="score">(5/5)</span></h3>
+            <p>Effort was prioritized on building a comprehensive, multi-page system rather than isolated frames.</p>
+                <strong>Evidence:</strong> Mapping Nielsen Heuristics, Interface Audits, and Golden Rules into a single coherent grayscale template across high content volume demonstrates a commitment to system stability.
+            
+    
+            <p><strong>Live Figma Link:</strong> 
+                <a href="https://www.figma.com/proto/YLZsq61Cc5kbXkD2q3vjHx/Untitled?node-id=0-1&t=iqQ9xyayDaGTkwm9-1" target="_blank">
+                    View Interactive Prototype
+                </a>
+            </p>
+            <hr>
+        </section>
+
+</body>
+</html>

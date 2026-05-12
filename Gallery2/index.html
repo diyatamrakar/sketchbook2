@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sketch #9 </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+    <script src="js/fruit_gallery.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Sketch #9: Updated Multi-State Fruit Gallery</h1>
+    <div class="reflection">
+        <p><strong>How did modularizing change how you think about the system?</strong><br>
+        Modularizing helped me separate the "gatekeeping" logic (the lock) from the "rendering" 
+        logic (showing the fruit). It made the system easier to organize because I could change 
+        the UI styling in one function without affecting the navigation math.</p>
+        <p><strong>What new interaction behavior did you add?</strong><br>
+        I added a "System Lock" expansion where navigation is disabled and fruit images are hidden 
+        behind a lock icon until the user presses 'K' to unlock.</p>
+        <p><strong>How does the sketch now communicate state more clearly?</strong><br>
+        The sketch uses a localized color shift—turning the image container pastel red when locked 
+        and sage green when active alongside a prominent lock icon to immediately signal the system's 
+        status to the user.</p>
+    </div>
+
+    <div class="direction" id="instruction-box">
+        <p><strong>Press Left or Right arrow to flip through the pictures</strong></p>
+    </div>
+</body>
+
+</html>

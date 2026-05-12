@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Figma prototype 2 </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <h1>Figma prototype 2</h1>
+
+        <section class="report-section">
+            <h3>Structural Decisions & Mobile-First Logic</h3>
+            <p>
+                In this iteration, I pivoted to a strictly mobile-first design strategy to prioritize 
+                structural integrity under high spatial constraints. I replaced the desktop-centric 
+                horizontal navigation from Week 1 with a Defined Navigation Model based on a vertical 
+                overlay. This is demonstrated across three required mobile frames: a Home page, an 
+                open Navigation state, and a detailed Sketches page. My primary structural decision 
+                was to utilize a dark utility square as a consistent Interaction Cue for the menu toggle, 
+                ensuring that global navigation remains accessible without competing with the primary 
+                content hierarchy. By stacking elements vertically, I have optimized the interface 
+                for thumb-driven interaction.
+            </p>
+
+            <h3>Changes from Previous Version</h3>
+            <p>
+                The most significant change is the expansion from a single layout to three distinct 
+                mobile-specific page types. I transitioned the navigation from a static header to a 
+                collapsed menu state to address the overcrowding issues identified in my initial audit. 
+                In the third frame, I introduced a sub-navigation structure for "sketches," demonstrating 
+                how the system handles nested information (Sketch 1, 2, and 3) without losing the 
+                overall Logical Content Prioritization. This shift ensures that the information 
+                architecture remains robust even when the viewport is restricted.
+            </p>
+            
+            <h3>Visible System Status & Hierarchy</h3>
+            <p>
+                To satisfy the Visible System Status requirement, I have used typographic weight and 
+                placement to indicate active states. Within the menu overlay, the differentiation 
+                between top-level links and sub-level sketches provides immediate orientation. I also 
+                established a Clear H1-H4 hierarchy: the primary "Interaction Sketchbook" title acts as 
+                the H1 anchor, while the menu items and sub-links represent H2 and H3 levels. This 
+                ensures that even in this grayscale, non-styled state, the user can navigate the 
+                architecture through scale and proximity alone.
+            </p>
+        
+            <h3>Unresolved Elements</h3>
+            <p>
+                For the desktop expansion, I implemented a centralized structural logic that utilizes the increased horizontal real estate. 
+                Unlike the mobile vertical stack, the desktop version clusters nested 'sketch' sub-navigation within a primary content container. 
+                This creates a clear focal point for the user’s eye. However, the spatial relationship between the secondary links (Reflections and Figma) 
+                and the primary sketch links remains a point of iteration. I need to determine if a grid-based alignment or a split-column layout would better
+                reinforce the information hierarchy as more complex data blocks are introduced.
+            </p>
+        
+            <p><strong>Live Figma Link:</strong> 
+                <a href="https://www.figma.com/proto/YLZsq61Cc5kbXkD2q3vjHx/Untitled?node-id=0-1&t=iqQ9xyayDaGTkwm9-1" target="_blank">
+                    View Interactive Prototype
+                </a>
+            </p>
+            <hr>
+        </section>
+
+</body>
+</html>
