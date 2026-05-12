@@ -16,46 +16,19 @@
 
         <h2>Structural Status</h2>
         <p>
-            Currently, I have implemented the core navigation architecture and the grayscale 
-            component library. The central "hub" system is structurally working, allowing 
-            for basic transitions between content frames. My <strong>Figma logic</strong> held 
-            up in terms of information architecture—the way screens connect makes sense—but 
-            it <strong>broke</strong> when it came to vertical rhythm. 
+            Currently, the implementation includes the core interactive architecture for the "Skipping Pond" and the initial cloud-based navigation hub. While the p5.js logic for stone physics is functional, the <strong>global navbar and iPhone-specific frames are currently missing</strong>. In my Figma plan, I mapped out a 21-frame sequence for mobile, but translating these into a responsive HTML structure has proven more complex than anticipated.
         </p>
         <p>
-            In the planning phase, I assumed fixed heights for my containers. In the browser, 
-            content dictates height, leading to "jumps" in the layout that I didn't anticipate. 
-            The incomplete sections include the interactive hover states for the navigation 
-            and the final population of the detail pages (Frames 18-21).
+            My <strong>Figma logic</strong> holds in terms of component design, but it <strong>breaks</strong> in the browser's execution of mobile flow. I assumed the mobile frames would simply stack, but without the navbar, there is no structural anchor to hold the sequence together. The "State Visibility" is currently low because the user lacks a persistent way to navigate back to the hub from a mobile viewport.
         </p>
 
-        <h3>Translation Challenges</h3>
+        <h2>Translation Challenges</h2>
         <p>
-            <strong>The Browser Surprise:</strong> I was surprised by how CSS assumes a 
-            "top-down" flow, whereas my visual plan assumed I could place elements 
-            anywhere. HTML hierarchy forced me to nest elements in a way that made 
-            styling certain "overlays" difficult.
+            <strong>The Missing iPhone Frames:</strong> The biggest challenge has been the collision between my fixed-pixel canvas sketches and the fluid nature of a mobile browser. I assumed I could use the same hierarchy for both, but the browser exposed that my "absolute positioning" logic from Figma doesn't work on a small screen. 
         </p>
         <p>
-            <strong>The Collision:</strong> My interface assumes that layout is absolute, 
-            but CSS assumes layout is fluid. These collided when trying to implement the 
-            mobile-first logic; what looked clean in a static map became cluttered when 
-            forced into a narrow viewport.
+            <strong>Structural Collisions:</strong> HTML assumes a top-down hierarchy, whereas my iPhone implementation plan assumes a series of lateral "swipes" or distinct frames. Trying to code these missing mobile frames requires a <code>viewport</code> meta-tag logic and media queries that I am still refining. This has caused a "catastrophic" collapse of the vertical rhythm on mobile, which I am currently treating as a learning priority.
         </p>
-   
-        <h2>Theoretical Integration & Metrics</h2>
-        
-        <h3>Navigation Model & System Coherence </h3>
-        <p>The logic utilizes viewport-specific adaptations to manage the "Gulf of Execution." I implemented a dropdown for desktop and a full-screen overlay for mobile.</p>
-
-        <h3>State Visibility </h3>
-        <p><strong>Norman & Nielsen:</strong> Pill-shaped buttons act as signifiers. I am working to ensure "Consistency and Standards" by applying global header systems across the 20+ frames mapped in my plan.</p>
-    
-        <h2>Final Week Implementation Plan</h2>
-        <ul>
-            <li><strong>Wednesday:</strong> Fix button active/focus states so users have a clear "clue" when they have clicked.</li>
-            <li><strong>Friday:</strong> Final audit of vertical rhythm on mobile screens to ensure an intuitive reading experience.</li>
-        </ul>
     </section>
 
 </body>
