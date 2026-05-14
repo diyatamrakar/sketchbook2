@@ -1,7 +1,8 @@
+/* --- GLOBAL STYLES (Your Existing Styles) --- */
 body {
-    margin:0;
+    margin: 0;
     padding: 0;
-    padding-top: 20vh ;
+    padding-top: 100px; /* Adjusted to make room for fixed nav */
     background: linear-gradient(180deg, #0c50a2 0%, #6eacfd 100%);
     background-attachment: fixed; 
     background-repeat: no-repeat;
@@ -22,60 +23,34 @@ h1, h2 {
     z-index: 10;
 }
 
-/* Container for the navbar */
-.nav-bar {
-    list-style-type: none; /* Removes bullet points */
-    margin: 0;
-    padding: 20px;
-    display: flex;         /* Aligns items in a row */
-    flex-wrap: wrap;       /* Allows items to wrap on smaller screens */
-    justify-content: center; /* Centers the links */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    border-radius: 15px;
-    gap: 15px;             /* Space between items */
-}
+/* --- THE NEW DROPDOWN NAVBAR --- */
 
-/* Individual list items */
-.nav-bar li {
-    display: inline;
-}
-
-/* Styling the links */
-.nav-bar a {
-    text-decoration: none; /* Removes underline */
-    color: #33a1fd;        /* Sky blue color */
-    font-family: sans-serif;
-    font-weight: bold;
-    padding: 8px 16px;
-    transition: all 0.3s ease; /* Smooth hover effect */
-    border-radius: 20px;
-}
-
-/* Hover effect */
-.nav-bar a:hover {
-    background-color: #33a1fd;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.nav-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 20px;
-    column-gap: 20px;
-}
-
-h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: white;
-    text-align: center;
+/* Fixed Container for the top of the screen */
+.main-nav {
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin: 15px 0 5px 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 2000; /* Stays above all clouds */
+    background: rgba(255, 255, 255, 0.05); /* Very subtle tint */
+    backdrop-filter: blur(5px); /* Glass effect */
 }
 
-.glass-nav a {
+.nav-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Dropdown Logic */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Using your "glass-nav" style for the main buttons */
+.dropbtn {
     text-decoration: none;
     color: white;
     font-weight: 700;
@@ -83,17 +58,57 @@ h3 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 17px 15px 15px; 
+    padding: 12px 20px; 
     border-radius: 35px;
     background: rgba(255, 255, 255, 0.15);
     white-space: nowrap;
-    
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
 }
 
-.glass-nav a:hover {
-    background: rgb(117, 12, 29);
-    transform: scale(1.2) translateY(-5px); 
-    z-index: 100;
+/* Dropdown Content (The hidden list) */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the menu under the button */
+    background: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    padding: 10px 0;
+    margin-top: 10px;
+    list-style: none;
+    z-index: 2100;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li a {
+    color: #0c50a2; /* Match your deep sky blue */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f0f8ff;
+    color: #33a1fd;
+    border-radius: 5px;
+}
+
+/* HOVER STATES */
+.dropdown:hover .dropdown-content {
+    display: block; /* Show menu on hover */
+}
+
+.dropdown:hover .dropbtn {
+    background: rgb(117, 12, 29); /* Your red hover color */
+    transform: scale(1.1) translateY(-2px);
 }
 
 /* THE SKY LAYER */
