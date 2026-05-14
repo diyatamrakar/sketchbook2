@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> UI/UX Reflection — Nielsen Heuristics </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <h1>UI/UX Reflection — Nielsen Heuristics</h1>
+
+        <section class="report-section">
+            <h2>Visibility of System Status</h2>
+            <p>
+                Nielsen’s heuristic related to Norman's Chapter 1 is <strong>visibility of system status</strong> 
+                because both refer to the disconnect between system actions and perceptions by the user. 
+                Norman says that misunderstanding arises when feedback from the system is vague, delayed, 
+                or nonexistent, creating an inaccurate mental model of how a certain system works. 
+                In relation, Nielsen's interpretation is that users must know what is going on via 
+                immediate and comprehensible feedback at all times.
+            </p>
+            <p>
+                With respect to my <em>stone-skipping mini-project</em>, the problem becomes apparent when 
+                the system is in a “waiting state" as the ripple grows. This is a designed process linked 
+                to the <code>rippleSize</code> threshold value that does not allow further interactions 
+                before the ripple reaches its maximum size. But there is nothing visually displayed that 
+                communicates to the user that the system is in a state of "waiting." As such, from the 
+                point of view of the user, the system is not responding, and they will be uncertain if 
+                the system is working or has ceased operating, as per Norman's point.
+            </p>
+        
+            <h2>Recognition Rather Than Recall</h2>
+            <p>
+                Another problem relates to <strong>recognition rather than recall</strong>. Nielsen insists 
+                that users should not need to recall the usage of a particular system but should be able 
+                to recognize it easily and see what should be done intuitively. My application goes against 
+                this notion since the prompt “Click to skip a stone” does not coincide with the way the 
+                interaction works as the latter involves using the method of releasing an item similar 
+                to how slingshots work. 
+            </p>
+            <p>
+                Despite adding the “Ghost Stone” to show the users from what position the interaction starts, 
+                there are several crucial aspects of the action that are still required to be recognized 
+                and experimented with by users since they involve how the angle and strength influence 
+                the number of skips or the sinking of the stone.
+            </p>
+      
+            <h2>Consistency and Standards</h2>
+            <p>
+                In terms of my <strong>interactive sketchbook</strong>, it violates the principle of 
+                consistency and standards mainly because of navigation problems. The homepage contains 
+                a neat layout consisting of rounded buttons called “Sketch 1,” “Sketch 2,” and so on up 
+                to “Sketch 9,” and micro-project stages. 
+            </p>
+            <p>
+                However, as soon as a person clicks any of those options, the consistent navigation is gone. 
+                There is no navigation bar inside the pages of the sketch, and therefore, one has to use 
+                the back button of the browser for navigating back to the menu. That way, there will be 
+                a gap between different pages of the sketch, and it will not work as an integrated interface.
+            </p>
+      
+            <h2>Match Between System and the Real World</h2>
+            <p>
+                The most difficult heuristic to realize is the <strong>consistency between the system 
+                and the real world</strong>. As mentioned by Nielsen, consistency between the system and 
+                the real world means that the designer should create a system that operates according 
+                to the conventions of the real world. 
+            </p>
+            <p>
+                In my case, the issue becomes difficult because I have to simulate reality by modeling 
+                realistic effects such as delay, friction, and random movement. On the other hand, 
+                I also have to make sure that the interaction with the system is responsive and 
+                comprehensible, which would mean simplification. If I focus on realism, the system will 
+                appear sluggish or unpredictable. If I focus on simplification, the realism will be undermined.
+            </p>
+        
+            <p><strong>Live Figma Link:</strong> 
+                <a href="https://www.figma.com/proto/YLZsq61Cc5kbXkD2q3vjHx/Untitled?node-id=0-1&t=iqQ9xyayDaGTkwm9-1" target="_blank">
+                    View Interactive Prototype
+                </a>
+            </p>
+            <hr>
+        </section>
+
+</body>
+</html>

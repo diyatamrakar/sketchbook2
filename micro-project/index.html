@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Micro Ideas: Step: One </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+    <script src="js/ripple.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <h1>Micro-Project — Progress Report #2</h1>
+
+    <div class="report-section">
+        <h2>1. Current Build </h2>
+        <p>The current system simulates a stone skipping across a pond using a multi-state logic system. My main variable is <code>bounceCount</code>, which tracks the stone's progression through three distinct phases: "PLIP," "THUD," and "SPLASH." When the user interacts by clicking, the system locks the ripple coordinates to the point of <code>impactX/Y</code> while the pebble continues forward. The pebble automatically disappears (sinks) when it triggers the final "SPLASH" threshold.</p>
+    
+        <h2>2. Where Is the Pressure?</h2>
+        <p>Tension in this system is threshold-based. The movement of the stone is gated by the <code>rippleSize</code> variable; the system is essentially held in a "waiting state" until the ripple reaches its maximum expansion of 150 pixels. This creates a rhythmic delay that mimics physical water resistance and surface tension, forcing the user to observe the full animation cycle before the next state is allowed to trigger.</p>
+        
+        <h2>3. One Structural Addition: Threshold-Based Behavior</h2>
+        <p>I plan on implementing a <strong>Multi-Impact Tracking System</strong>. By giving each point of impact its own independent life cycle, ripples no longer disappear when a new bounce occurs. Instead, waves from the initial 'PLIP' continue to <strong>expand and overlap</strong> with the subsequent 'THUD' and 'SPLASH' impacts. This creates a layered interference pattern that realistically simulates how multiple wave fronts collide on a water surface.</p>
+    
+        <div id="canvas"></div>
+    </div>
+</body>
+</html>

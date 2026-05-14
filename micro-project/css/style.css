@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1{
+    margin-left: 5%;
+}
+
+#canvas{
+    display: flex;
+    justify-content: center;    
+    margin: 20px auto;       
+    width: 100%;            
+}
+
+.report-section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 90%;         
+    box-sizing: border-box; 
+    margin: 0 auto;      
+}

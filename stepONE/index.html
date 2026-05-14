@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> Micro Ideas: Step: One </title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+    <script src="js/rain.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <h1>Micro-Project — Progress #1</h1>
+    <section class="report-section">
+        <h2>1. Concept Summary</h2>
+        <p>My project is a digital "skipping pond" where the user clicks to throw a stone across the water. The user controls the starting position of the throw with their mouse. As time passes, the stone automatically bounces across the screen, creating ripples and sound-words ("PLIP", "THUD", "SPLASH") until it loses energy and sinks.</p>
+
+        <h2>2. Primary Variable</h2>
+        <p><code>let bounceCount = 0;</code></p>
+        <p><span class="highlight">What changes this variable?</span> The variable increases by 1 every time a ripple finishes growing and the stone "jumps" to its next position.</p>
+        <p><span class="highlight">What does it control?</span> It controls the behavior of the stone. It tells the computer which word to display and decides when the stone has bounced too many times and needs to sink.</p>
+
+        <h2>3. Base Build (Step One)</h2>
+        <p>The current version uses the <code>bounceCount</code> variable and a mouse click to move between two distinct states:</p>
+        <ul>
+            <li><strong>State 1 (Idle):</strong> The screen is a still, blue pond with text that says "Click to skip a stone." The system is waiting for user input.</li>
+            <li><strong>State 2 (Active):</strong> Once clicked, the stone enters a movement loop. It triggers three ripples in a sequence, each with a different text label, and slows down (friction) after every bounce.</li>
+        </ul>
+
+        <h2>4. Structural Growth</h2>
+        <p>In the coming weeks, I will make the pond more realistic by adding a gravity variable so the stone travels in a <strong>curved "hop"</strong> (parabolic arc) instead of a flat line. I will also implement <strong>Object-Oriented Programming (OOP)</strong> so the user can throw multiple stones at the same time. Finally, I will add a <strong>"Choppy Water" threshold</strong>: if there are too many ripples on screen at once, the water becomes turbulent, causing new stones to lose speed faster and sink earlier.</p>
+
+        <h2>5. Working Sketch (Base Build)</h2>
+        <div id="canvas"></div>
+    </section>
+
+</body>
+
+</html>
