@@ -1,0 +1,217 @@
+body {
+    margin:0;
+    padding: 0;
+    padding-top: 20vh ;
+    background: linear-gradient(180deg, #0c50a2 0%, #6eacfd 100%);
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    min-height: 104.9vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;  
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
+
+h1, h2 {
+    color: white;
+    text-shadow: 3px 3px 3px rgb(76, 76, 76);
+    margin: 5px;
+    z-index: 10;
+}
+
+/* THE GLASS CONTAINER */
+.glass-nav {
+    list-style: none;
+    padding: 30px;
+    margin: 20px auto;
+    transform: translateY(-10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100; 
+    max-width: 45%; 
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+    margin: 20px auto; 
+}
+
+.nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: 15px 0 5px 0;
+}
+
+.glass-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 17px 15px 15px; 
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    
+}
+
+.glass-nav a:hover {
+    background: rgb(117, 12, 29);
+    transform: scale(1.2) translateY(-5px); 
+    z-index: 100;
+}
+
+/* THE SKY LAYER */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cloud {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: normal; 
+    opacity: 1;
+}
+
+.c1 { 
+    top: 45%; 
+    left: 9%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-1.png'); 
+    z-index: 3;
+}
+
+.c2 { 
+    top: 3%; 
+    left: 65%; 
+    width: 35%; 
+    height: 35%; 
+    background-image: url('img/Untitled-2.png'); 
+    z-index: 2;
+}
+
+.c5 { 
+    top: 1.5%; 
+    left: 3%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-5.png'); 
+    z-index: 1;
+}
+
+.c4 { 
+    top: 2%; 
+    left: 59%; 
+    width: 20%; 
+    height: 20%; 
+    background-image: url('img/Untitled-4.png'); 
+    z-index: 1;
+}
+
+.c3 { 
+    top: 26%; 
+    left: 72%; 
+    width: 33%; 
+    height: 33%; 
+    background-image: url('img/Untitled-3.png'); 
+    z-index: 3;
+}
+
+.c9 { 
+    top: 56%; 
+    left: 1%; 
+    width: 35%; 
+    height: 35%; 
+    background-image: url('img/Untitled-9.png'); 
+    z-index: 4;
+}
+
+.c8 { 
+    top: 50%; 
+    left: 72%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-8.png'); 
+    z-index: 4;
+}
+
+.c6 { 
+    top: 20%; 
+    left: 0%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-6.png'); 
+    z-index: 2;
+}
+
+.c7 { 
+    top: 78%; 
+    left: 74%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-7.png'); 
+    z-index: 1;
+}
+
+.c7 { 
+    top: 78%; 
+    left: 74%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-7.png'); 
+    z-index: 1;
+}
+
+.c10 { 
+    top: 100%; 
+    left: 60%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-10.png'); 
+    z-index: 1;
+}
+
+.c12 { 
+    top: 97%; 
+    left: 2%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-12.png'); 
+    z-index: 1;
+}
+
+.c11 { 
+    top: 110%; 
+    left: 36%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-11.png'); 
+    z-index: 1;
+}
