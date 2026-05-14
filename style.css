@@ -22,24 +22,40 @@ h1, h2 {
     z-index: 10;
 }
 
-/* THE GLASS CONTAINER */
-.glass-nav {
-    list-style: none;
-    padding: 30px;
-    margin: 20px auto;
-    transform: translateY(-10px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 100; 
-    max-width: 45%; 
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
-    margin: 20px auto; 
+/* Container for the navbar */
+.nav-bar {
+    list-style-type: none; /* Removes bullet points */
+    margin: 0;
+    padding: 20px;
+    display: flex;         /* Aligns items in a row */
+    flex-wrap: wrap;       /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Centers the links */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 15px;
+    gap: 15px;             /* Space between items */
+}
+
+/* Individual list items */
+.nav-bar li {
+    display: inline;
+}
+
+/* Styling the links */
+.nav-bar a {
+    text-decoration: none; /* Removes underline */
+    color: #33a1fd;        /* Sky blue color */
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: all 0.3s ease; /* Smooth hover effect */
+    border-radius: 20px;
+}
+
+/* Hover effect */
+.nav-bar a:hover {
+    background-color: #33a1fd;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .nav-row {
