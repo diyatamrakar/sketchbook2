@@ -83,5 +83,39 @@
         <div class="cloud c11"></div> <div class="cloud c12"></div>
     </div>
 
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButtons = document.querySelectorAll('.dropbtn');
+            
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    // Only activate tap interactions if user is browsing inside screen widths under 768px
+                    if (window.innerWidth <= 768) {
+                        const targetMenu = this.parentElement;
+                        
+                        // Close alternative list layouts if currently toggled open
+                        document.querySelectorAll('.dropdown').forEach(item => {
+                            if (item !== targetMenu) {
+                                item.classList.remove('js-active');
+                            }
+                        });
+                        
+                        // Toggle view visibility classes for targeted menus
+                        targetMenu.classList.toggle('js-active');
+                        event.stopPropagation();
+                    }
+                });
+            });
+
+            // If a user clicks background spaces outside nav items, wrap the lists back up
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.dropdown').forEach(item => {
+                    item.classList.remove('js-active');
+                });
+            });
+        });
+    </script>
+</body>
+
 </body>
 </html>
