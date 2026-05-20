@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <!-- TOP NAVIGATION BAR -->
     <header class="main-nav">
         <div class="nav-container">
             
+            <button class="menu-toggle" aria-label="Toggle Navigation">☰ Menu</button>
+            
             <div class="menu-items">
-                <!-- Dropdown 1: Sketches -->
                 <div class="dropdown">
                     <button class="dropbtn">Sketches ▼</button>
                     <ul class="dropdown-content">
@@ -30,7 +30,6 @@
                     </ul>
                 </div>
 
-                <!-- Dropdown 2: Micro Project -->
                 <div class="dropdown">
                     <button class="dropbtn">Projects ▼</button>
                     <ul class="dropdown-content">
@@ -43,7 +42,6 @@
                     </ul>
                 </div>
 
-                <!-- Dropdown 3: Assessments -->
                 <div class="dropdown">
                     <button class="dropbtn">Assessments ▼</button>
                     <ul class="dropdown-content">
@@ -54,7 +52,6 @@
                     </ul>
                 </div>
 
-                <!-- Dropdown 4: Figma -->
                 <div class="dropdown">
                     <button class="dropbtn">Figma ▼</button>
                     <ul class="dropdown-content">
@@ -67,13 +64,11 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="hero">
         <h1>Interactive Sketchbook</h1>
         <h2>by Diya Tamrakar</h2>
     </main>
 
-    <!-- CLOUD ANIMATIONS BACKGROUND -->
     <div class="sky">
         <div class="cloud c1"></div> <div class="cloud c2"></div>
         <div class="cloud c3"></div> <div class="cloud c4"></div>
@@ -83,39 +78,48 @@
         <div class="cloud c11"></div> <div class="cloud c12"></div>
     </div>
 
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const menuButtons = document.querySelectorAll('.dropbtn');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const dropButtons = document.querySelectorAll('.dropbtn');
             
-            menuButtons.forEach(button => {
-                button.addEventListener('click', function(event) {
-                    // Only activate tap interactions if user is browsing inside screen widths under 768px
+            // 1. Toggle Side Drawer Pop-Out Panel Open/Closed
+            menuToggle.addEventListener('click', function(e) {
+                mainNav.classList.toggle('nav-open');
+                e.stopPropagation(); 
+            });
+            
+            // 2. Control internal sub-menus inside the open mobile panel
+            dropButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         const targetMenu = this.parentElement;
                         
-                        // Close alternative list layouts if currently toggled open
+                        // Close any other open sub-menus first
                         document.querySelectorAll('.dropdown').forEach(item => {
                             if (item !== targetMenu) {
                                 item.classList.remove('js-active');
                             }
                         });
                         
-                        // Toggle view visibility classes for targeted menus
                         targetMenu.classList.toggle('js-active');
-                        event.stopPropagation();
+                        e.stopPropagation();
                     }
                 });
             });
 
-            // If a user clicks background spaces outside nav items, wrap the lists back up
-            document.addEventListener('click', function() {
-                document.querySelectorAll('.dropdown').forEach(item => {
-                    item.classList.remove('js-active');
-                });
+            // 3. Close the drawer if a user clicks outside the menu context window completely
+            document.addEventListener('click', function(e) {
+                const menuItemsPanel = document.querySelector('.menu-items');
+                if (mainNav.classList.contains('nav-open') && !menuItemsPanel.contains(e.target) && e.target !== menuToggle) {
+                    mainNav.classList.remove('nav-open');
+                    document.querySelectorAll('.dropdown').forEach(item => {
+                        item.classList.remove('js-active');
+                    });
+                }
             });
         });
     </script>
-</body>
-
 </body>
 </html>
