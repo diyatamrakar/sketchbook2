@@ -111,6 +111,86 @@ h1, h2 {
     transform: scale(1.1) translateY(-2px);
 }
 
+/* ==========================================================================
+   MOBILE & IPHONE RESPONSIVE STYLES
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Prevent body layout truncation */
+    body {
+        padding-top: 240px; /* Gives space for the stacked vertical nav */
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* 2. Re-stack the main navigation bar */
+    .main-nav {
+        background: rgba(12, 80, 162, 0.85); /* Solid blue tint for legibility */
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stack menu groups vertically */
+        align-items: center;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. Make navigation buttons stretch evenly */
+    .dropbtn {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    /* 4. Fix mobile alignment issues for content folders */
+    .dropdown-content {
+        position: relative; /* Push background clouds downward instead of floating */
+        top: 0;
+        left: 0;
+        transform: none; /* Clear the desktop horizontal translations */
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 5px;
+        border-radius: 10px;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+    /* 5. Mobile Tap Overrides instead of Hover triggers */
+    /* When an user clicks a category menu button, JS applies this state utility style */
+    .dropdown.js-active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown.js-active .dropbtn {
+        background: rgb(117, 12, 29);
+    }
+
+    /* 6. Contain background canvas clouds safely */
+    .sky {
+        height: 150vh; /* Extends tracking past viewports if scrolling occurs */
+    }
+
+    .cloud {
+        opacity: 0.7; /* Lightens assets behind compressed overlay layers */
+    }
+}
+
 /* THE SKY LAYER */
 .sky {
     position: absolute;
