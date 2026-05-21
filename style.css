@@ -34,7 +34,7 @@ h1, h2 {
     justify-content: center;
     padding: 15px 0;
     z-index: 2000; /* Stays above all clouds */
-    background: rgba(255, 255, 255, 0.05); /* Very subtle tint */
+    background: #ffffff /* Very subtle tint */
     backdrop-filter: blur(5px); /* Glass effect */
 }
 
