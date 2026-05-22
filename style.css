@@ -25,6 +25,11 @@ h1, h2 {
     z-index: 10;
 }
 
+.hero{
+   justify-content: center;⁠
+   display: flex;
+   align-items: center;
+}
 /* ==========================================================================
    2. DESKTOP NAVIGATION BAR (Centered Dropdowns)
    ========================================================================== */
