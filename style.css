@@ -153,6 +153,15 @@ h1, h2 {
         padding: 0 20px;
     }
 
+    .hero-container {
+        display: flex;
+        flex-direction: column; /* Stack the title and subtitle vertically */
+        align-items: center;    /* Center them horizontally */
+        justify-content: center;/* Optional: Center them vertically on the screen */
+        text-align: center;     /* Ensures individual text lines are centered */
+        width: 100%;
+    }
+
     /* Style the Mobile Menu Button */
     .menu-toggle {
         display: block;
