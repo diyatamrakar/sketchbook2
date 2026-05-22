@@ -1,4 +1,4 @@
-/* --- GLOBAL STYLES (Your Existing Styles) --- */
+/* --- GLOBAL STYLES --- */
 body {
     margin: 0;
     padding: 0;
@@ -116,6 +116,7 @@ h1, h2 {
    ========================================================================== */
 /* Hide mobile toggle icon on standard desktop monitors */
 .menu-toggle {
+    color: #0c50a2; 
     display: none;
 }
 
