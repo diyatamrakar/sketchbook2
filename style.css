@@ -21,6 +21,7 @@ h1, h2 {
     text-shadow: 3px 3px 3px rgb(76, 76, 76);
     margin: 5px;
     z-index: 10;
+    justify-content: center align;
 }
 
 /* --- THE NEW DROPDOWN NAVBAR --- */
