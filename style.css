@@ -21,7 +21,7 @@ body {
 h1, h2 {
     color: white;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     margin: 5px;
     z-index: 10;
     text-shadow: 0 0 10px #000000
@@ -33,9 +33,7 @@ h1, h2 {
     align-items: center;    
     justify-content: center;
     text-align: center;     
-    padding-top: 140px; 
-    box-sizing: border-box;
-    min-height: 40vh;       
+    box-sizing: border-box;   
     width: 100%;
 }
 
