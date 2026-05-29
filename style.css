@@ -29,6 +29,7 @@ h1, h2 {
    justify-content: center;⁠
    display: flex;
    align-items: center;
+   text-align: center;
 }
 /* ==========================================================================
    2. DESKTOP NAVIGATION BAR (Centered Dropdowns)
