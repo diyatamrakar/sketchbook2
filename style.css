@@ -26,6 +26,7 @@ h1, h2 {
 }
 
 .hero{
+   flex-direction: center;
    justify-content: center;⁠
    display: flex;
    align-items: center;
