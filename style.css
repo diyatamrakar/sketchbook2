@@ -1,16 +1,16 @@
-/* ====================/* ==========================================================================
+/* ==========================================================================
    1. GLOBAL STYLES 
- ========================================================================== */
+   ========================================================================== */
 body {
     margin: 0;
     padding: 0;
-    padding-top: 100px; /* Adjusted to make room for fixed nav */
+    padding-top: 15px; 
     background: linear-gradient(180deg, #0c50a2 0%, #6eacfd 100%);
     background-attachment: fixed; 
     background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, sans-serif;
     display: flex;
-    min-height: 104.9vh;
+    min-height: 100vh;      /* Use perfect viewport constraints */
     flex-direction: column;
     align-items: center;
     overflow-y: auto;  
@@ -21,29 +21,36 @@ body {
 h1, h2 {
     color: white;
     text-align: center;
-    font-size: xx-large;
+    font-size: xxx-large;
     margin: 5px;
     z-index: 10;
-    text-shadow: 0 0 10px #000000
+    
+    /* THE FIX: Deep, dark blur shadow that blooms using your exact sky background hex code */
+    text-shadow: 0 0 35px #0c50a2, 0 0 15px #0c50a2, 0 0 5px rgba(12, 80, 162, 0.9);
 }
 
+/* THE FIX: Centers perfectly in the viewport space below the navbar */
 .hero {
     display: flex;
     flex-direction: column; 
     align-items: center;    
-    justify-content: center;
+    justify-content: center; /* Center content vertically inside the flex container */
     text-align: center;     
     box-sizing: border-box;   
     width: 100%;
+    
+    /* Calculate height: 100% viewport height minus the fixed 70px navbar zone */
+    min-height: calc(100vh - 70px); 
+    padding-top: 70px;       /* Keeps heading tags from sliding behind the nav strip */
 }
 
-/*======================================================
+/* ==========================================================================
    2. DESKTOP NAVIGATION BAR (Centered Dropdowns)
-========================================================================== */
+   ========================================================================== */
 .main-nav {
     position: fixed;
     top: 0;
-    left: 0;       /* Pins bar to the left edge edge */
+    left: 0;       /* Pins bar to the left edge */
     width: 100%;   /* Forces container to span full width */
     display: flex;
     justify-content: center; /* Centers navigation targets horizontally on desktop */
@@ -145,7 +152,13 @@ h1, h2 {
    ========================================================================== */
 @media (max-width: 768px) {
     body {
-        padding-top: 80px; 
+        padding-top: 0; 
+    }
+
+    .hero {
+        /* Adjust center space calculation to account for modified mobile bar heights */
+        min-height: calc(100vh - 65px);
+        padding-top: 65px;
     }
 
     .main-nav {
@@ -260,15 +273,100 @@ h1, h2 {
     opacity: 1;
 }
 
-.c1 { top: 45%; left: 9%; width: 30%; height: 30%; background-image: url('img/Untitled-1.png'); z-index: 3;}
-.c2 { top: 3%; left: 65%; width: 35%; height: 35%; background-image: url('img/Untitled-2.png'); z-index: 2;}
-.c5 { top: 1.5%; left: 3%; width: 40%; height: 40%; background-image: url('img/Untitled-5.png'); z-index: 1;}
-.c4 { top: 2%; left: 59%; width: 20%; height: 20%; background-image: url('img/Untitled-4.png'); z-index: 1;}
-.c3 { top: 26%; left: 72%; width: 33%; height: 33%; background-image: url('img/Untitled-3.png'); z-index: 3;}
-.c9 { top: 56%; left: 1%; width: 35%; height: 35%; background-image: url('img/Untitled-9.png'); z-index: 4;}
-.c8 { top: 50%; left: 72%; width: 30%; height: 30%; background-image: url('img/Untitled-8.png'); z-index: 4;}
-.c6 { top: 20%; left: 0%; width: 30%; height: 30%; background-image: url('img/Untitled-6.png'); z-index: 2;}
-.c7 { top: 78%; left: 74%; width: 30%; height: 30%; background-image: url('img/Untitled-7.png'); z-index: 1;}
-.c10 { top: 100%; left: 60%; width: 40%; height: 40%; background-image: url('img/Untitled-10.png'); z-index: 1;}
-.c12 { top: 97%; left: 2%; width: 40%; height: 40%; background-image: url('img/Untitled-12.png'); z-index: 1;}
-.c11 { top: 110%; left: 36%; width: 30%; height: 30%; background-image: url('img/Untitled-11.png'); z-index: 1;}
+.c1 { 
+    top: 45%; 
+    left: 9%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-1.png'); 
+    z-index: 3;
+}
+.c2 { 
+    top: 3%; 
+    left: 65%; 
+    width: 35%; 
+    height: 35%; 
+    background-image: url('img/Untitled-2.png'); 
+    z-index: 2;
+}
+.c5 { 
+    top: 1.5%; 
+    left: 3%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-5.png'); 
+    z-index: 1;
+}
+.c4 { 
+    top: 2%; 
+    left: 59%; 
+    width: 20%; 
+    height: 20%; 
+    background-image: url('img/Untitled-4.png'); 
+    z-index: 1;
+}
+.c3 { 
+    top: 26%; 
+    left: 72%; 
+    width: 33%; 
+    height: 33%; 
+    background-image: url('img/Untitled-3.png'); 
+    z-index: 3;
+}
+.c9 { 
+    top: 56%; 
+    left: 1%; 
+    width: 35%; 
+    height: 35%; 
+    background-image: url('img/Untitled-9.png'); 
+    z-index: 4;
+}
+.c8 { 
+    top: 50%; 
+    left: 72%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-8.png'); 
+    z-index: 4;
+}
+.c6 { 
+    top: 20%; 
+    left: 0%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-6.png'); 
+    z-index: 2;
+}
+.c7 { 
+    top: 78%; 
+    left: 74%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-7.png'); 
+    z-index: 1;
+}
+.c10 { 
+    top: 100%; 
+    left: 60%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-10.png'); 
+    z-index: 1;
+}
+.c12 { 
+    top: 97%; 
+    left: 2%; 
+    width: 40%; 
+    height: 40%; 
+    background-image: url('img/Untitled-12.png'); 
+    z-index: 1;
+}
+.c11 { 
+    top: 110%; 
+    left: 36%; 
+    width: 30%; 
+    height: 30%; 
+    background-image: url('img/Untitled-11.png'); 
+    z-index: 1;
+}
+
